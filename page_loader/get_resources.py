@@ -39,7 +39,7 @@ def create_resource_name(original_name, site_url):
     base, ext = os.path.splitext(original_name)
     base = re.sub(r'[\W_]', '-', base)
     site_url = re.sub(r'[\W_]', '-', site_url)
-    return f'{site_url}-{base}{ext}'
+    return f'{site_url}{base}{ext}'
 
 def find_resources(soup, path, site_url): 
     
@@ -63,9 +63,7 @@ def download_resources(resources, base_url, resources_dir_name):
     create_dir(resources_dir_name)
     for r in resources:
         url = f'{base_url}{r["old_value"]}'
-        print(url)
         file_path = os.path.join(resources_dir_name, r['new_value'])
-        # print(get_link(url).content)
         with open(file_path, 'wb') as f:
             f.write(requests.get(url, stream=True).content)
 
@@ -91,7 +89,6 @@ def download(url, output):
             url,
             resources_dir_name,
         )
-
-    
+    return html_file_path
 
 
