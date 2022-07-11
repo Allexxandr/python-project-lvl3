@@ -4,6 +4,9 @@ install:
 loader:
 	poetry run page_loader https://www.google.com
 
+debug-loader:
+	poetry run page_loader -l DEBUG https://www.google.com
+
 build:
 	poetry build
 

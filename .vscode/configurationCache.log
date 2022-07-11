@@ -1,0 +1,1 @@
+{"buildTargets":["build","debug-loader","install","lint","loader","package-install","publish","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
